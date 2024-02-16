@@ -32,16 +32,17 @@ public class OpenVR_Service : MonoBehaviour
                                        mat34.m11);
 
             // Don't know why but this has to be done apparently
-            position = new Vector3(position.x, position.y, -position.z);
+            position = new Vector3(-position.x, position.y, position.z);
 
             // Rotation
-            Vector3 rotation = mat34.ExtractRotation().eulerAngles;
+            Quaternion quaternion = mat34.ExtractRotation();
 
-            //rotation = rotation.ToDegrees();
+            quaternion = Quaternion.Euler(0, 180, 0) * quaternion; // Reverse yaw
 
-            //rotation = new Vector3(rotation.z, rotation.x, rotation.y); // rotation not correct
-                                                                        //Vector3 rotation = new Vector3(mat34.m2, mat34.m6, mat34.m10);
-                                                                        //rotation *= 360;
+            Vector3 rotation = quaternion.eulerAngles;
+
+            // Again, i don't know why
+            //rotation = new Vector3(-rotation.x, rotation.y, rotation.z);
 
             TrackerInfo trackerInfo = new TrackerInfo();
             trackerInfo.Position = position;

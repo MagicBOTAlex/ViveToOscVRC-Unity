@@ -13,7 +13,7 @@ public class OSC_Service : MonoBehaviour
     [SerializeField] private int port = 9000;
 
     [SerializeField] private float TickDelay = 0.1f;
-    float lowestPoint = 0; // Used for floor-offset (Maybe auto calibrated ¯\_(ツ)_/¯)
+    [SerializeField] float lowestPoint = 0; // Used for floor-offset (Maybe auto calibrated ¯\_(ツ)_/¯)
 
     private OscSender sender;
 
@@ -32,7 +32,7 @@ public class OSC_Service : MonoBehaviour
         while (true)
         {
             // If tracker flies away, then reset floor offset
-            if (Mathf.Abs(lowestPoint) > 3)
+            if (Mathf.Abs(lowestPoint) > 2)
             {
                 lowestPoint = 0;
             }
@@ -48,9 +48,6 @@ public class OSC_Service : MonoBehaviour
 
                 Vector3 pos = trackerInfo.Value.Position;
                 Vector3 rot = trackerInfo.Value.EulerRotation;
-                //rot *= 180;
-
-                //rot = new Vector3(rot.X, rot.Y, rot.Z);
 
                 if (lowestPoint > pos.y)
                 {
