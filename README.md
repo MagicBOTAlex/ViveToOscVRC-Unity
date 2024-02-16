@@ -1,7 +1,7 @@
 # Info
 The reason you would want to this is FTB with base stations + Quest 2 full hand tracking in VRChat.
 
-### Semi-functional console-app based version (Only tracking position): https://github.com/MagicBOTAlex/ViveToOscVRC
+#### Semi-functional console-app based version (Only tracking position): https://github.com/MagicBOTAlex/ViveToOscVRC
 
 # Features
 [x] Sends data through OSC to VRChat. <br>
