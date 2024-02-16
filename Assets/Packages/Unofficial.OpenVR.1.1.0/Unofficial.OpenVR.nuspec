@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>Unofficial.OpenVR</id>
+    <version>1.1.0</version>
+    <title>OpenVR</title>
+    <authors>krauthaufen</authors>
+    <owners>krauthaufen</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/krauthaufen/openvr</projectUrl>
+    <description>OpenVR bindings</description>
+    <releaseNotes>297256</releaseNotes>
+  </metadata>
+</package>
