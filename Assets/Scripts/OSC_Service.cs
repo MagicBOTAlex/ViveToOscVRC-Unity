@@ -19,6 +19,11 @@ public class OSC_Service : MonoBehaviour
 
     private void Start()
     {
+        Invoke(nameof(LateStart), 0.1f);
+    }
+
+    private void LateStart()
+    {
         IPAddress address = IPAddress.Parse(Ip_address);
 
         sender = new OscSender(address, port);
